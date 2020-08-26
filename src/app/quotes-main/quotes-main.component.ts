@@ -58,13 +58,13 @@ export class QuotesMainComponent implements OnInit {
     this.quotes.push(emittedQuote);
   }
 
-  upvote(i): void {
+  upvote(i: number): void {
     this.quotes[i].upvotes -= -1;
   }
-  downvote(i): void {
+  downvote(i: number): void {
     this.quotes[i].downvotes -= -1;
   }
-  delQuote(i): void {
+  delQuote(i: number): void {
     this.quotes.splice(i, 1);
   }
   highestUpvote(): number {
