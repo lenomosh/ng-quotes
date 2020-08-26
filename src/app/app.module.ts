@@ -15,7 +15,7 @@ import { HighlighterDirective } from './Directives/Highlighter/highlighter.direc
     QuotesDetailsComponent,
     QuotesAddComponent,
     DateDifferencePipe,
-    HighlighterDirective
+    HighlighterDirective,
   ],
   imports: [
     BrowserModule
