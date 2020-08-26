@@ -8,9 +8,8 @@ export class Quotes {
     public quote: string,
     public author: string,
     public datecreated: moment.Moment
-  ){
+  ) {
     this.upvotes = 0;
     this.downvotes = 0;
-
   }
 }
