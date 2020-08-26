@@ -1,13 +1,10 @@
-import {Directive, ElementRef} from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlighter]'
+  selector: '[appHighlighter]',
 })
 export class HighlighterDirective {
-
   constructor(elem: ElementRef) {
     elem.nativeElement.className = 'alert alert-success';
-
   }
-
 }
