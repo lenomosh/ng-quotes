@@ -10,19 +10,19 @@ import * as moment from 'moment';
 export class QuotesAddComponent implements OnInit {
 
   constructor() { }
-  newQuote = new Quotes ('', '', '', moment());
+  // newQuote = new Quotes ('', '', '', moment());
   @Output() emitQuote = new EventEmitter();
-  quoteStr: string;
-  quotePublisher: string;
-  quoteAuthor: string;
-  theQuote: any;
+  quote: string;
+  username: string;
+  author: string;
+  newQuote: any;
 
   submitQuote( ): void{
-    this.theQuote = new Quotes(this.quotePublisher, this.quoteAuthor, this.quoteStr, this.theQuote);
-    this.quoteStr = '';
-    this.quoteAuthor = '';
-    this.quotePublisher = '';
-    this.emitQuote.emit(this.theQuote);
+    this.newQuote = new Quotes(this.username,  this.quote, this.author, moment());
+    this.quote = '';
+    this.author = '';
+    this.username = '';
+    this.emitQuote.emit(this.newQuote);
   }
 
   ngOnInit(): void {
