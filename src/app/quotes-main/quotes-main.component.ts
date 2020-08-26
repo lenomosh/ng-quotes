@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Quotes} from '../Boilerplates/Quote';
 import * as moment from 'moment';
 
@@ -26,7 +26,7 @@ export class QuotesMainComponent implements OnInit {
   ];
   quotes: Quotes[] = [];
   constructor() {
-    this.quotes.map(
+    this.quotesObj.map(
       element => this.quotes.push(
         new Quotes(
           'Lennox O.',
@@ -40,7 +40,7 @@ export class QuotesMainComponent implements OnInit {
   currentScore: number;
   newScore: number;
   counter: number;
-
+  votesOnlyArr: (number)[] = [];
   addNewQuote(emittedQuote): void{
     this.quotes.push(emittedQuote);
   }
@@ -55,14 +55,14 @@ export class QuotesMainComponent implements OnInit {
     this.quotes.splice(i, 1);
   }
   highestUpvote(): number {
+    Math.max.apply(null, this.votesOnlyArr);
     this.currentScore = 0;
     this.newScore = 0;
     this.quotes.map(quote => {
-      this.newScore = quote.upvotes;
-      this.currentScore = this.newScore > this.currentScore ? this.newScore : this.currentScore;
-    }
-    );
-    return this.currentScore;
+      const {upvotes} = quote;
+      return this.votesOnlyArr.push(upvotes);
+    });
+    return Math.max(...this.votesOnlyArr);
   }
 
   ngOnInit(): void {

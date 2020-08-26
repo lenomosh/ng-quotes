@@ -1,23 +1,25 @@
 <div class="container">
-  <h2 class="text-center">Create New Quote.</h2>
-  <div class="col-md-6 text-align:text-center">
-    <hr>
+  <div class="card-header">
+    <h5 class="text-center">Create New Quote.</h5>
+
+  </div>
+  <div class="col-md-6 m-auto text-center">
     <form (ngSubmit)="submitQuote()" #quoteForm='ngForm'>
       <br>
+      <div class="form-group">
+        <label for="quote">Quote</label>
+        <input type="text" name="quote" class="form-control" id="quote" [(ngModel)]="quote" />
+      </div>
+      <div class="form-group">
+        <label for="author"><strong>Author</strong></label>
+        <input type="text" name="author" class="form-control" id="author" [(ngModel)]="author"/>
+      </div>
       <div class="form-group">
         <label for="name">Your Name Name</label>
         <input type="text" name="publisher" class="form-control" id="name" [(ngModel)]="username" />
       </div>
 
-      <div class="form-group">
-        <label for="quote">Quote</label>
-        <input type="text" name="quote" class="form-control" id="quote" [(ngModel)]="quote" />
-      </div>
 
-      <div class="form-group">
-        <label for="author"><strong>Author</strong></label>
-        <input type="text" name="author" class="form-control" id="author" [(ngModel)]="author"/>
-      </div>
 
       <button type="submit" class="btn btn-primary">Create Quote</button>
     </form>
