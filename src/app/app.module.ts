@@ -7,7 +7,7 @@ import { QuotesDetailsComponent } from './quotes-details/quotes-details.componen
 import { QuotesAddComponent } from './quotes-add/quotes-add.component';
 import { DateDifferencePipe } from './Pipes/DateDifference/date-difference.pipe';
 import { HighlighterDirective } from './Directives/Highlighter/highlighter.directive';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +18,8 @@ import {FormsModule} from '@angular/forms';
     DateDifferencePipe,
     HighlighterDirective,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
